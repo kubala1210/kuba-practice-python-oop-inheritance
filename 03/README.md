@@ -2,10 +2,50 @@
 
 &nbsp;
 
-# `#03` Python: Podstawy - dziedzieczenie
+# `#03` Python: Programowanie obiektowe – dziedziczenie i polimorfizm
 
+W tym zadaniu stworzysz system obsługi różnych metod płatności. Każda forma płatności realizuje metodę `pay(amount)`, ale działa ona inaczej w zależności od klasy. Dzięki temu powtórzysz sobie, czym jest polimorfizm – czyli wspólna metoda dla wielu klas, która może mieć różne zachowanie.
 
-Tutaj treść
+## Co masz zrobić?
+
+1. Stwórz klasę bazową `PaymentMethod`, która zawiera metodę `pay(amount)`.  
+   Metoda ta powinna wypisywać:  
+   `Zapłacono {amount} zł`
+
+2. Stwórz klasę `CardPayment`, która dziedziczy po `PaymentMethod` i nadpisuje metodę `pay()`.  
+   Powinna wypisywać:  
+   `Zapłacono kartą: {amount} zł`
+
+3. Stwórz klasę `BlikPayment`, która dziedziczy po `PaymentMethod` i nadpisuje metodę `pay()`.  
+   Powinna wypisywać:  
+   `Płatność BLIK: {amount} zł (kod jednorazowy)`
+
+4. Stwórz klasę `CashPayment`, która dziedziczy po `PaymentMethod` i nadpisuje metodę `pay()`.  
+   Powinna wypisywać:  
+   `Zapłacono gotówką: {amount} zł (proszę wydać resztę)`
+
+5. Utwórz listę różnych metod płatności i wywołaj na każdej z nich metodę `pay()` z taką samą kwotą.
+
+## Przykład użycia
+
+```python
+payments = [
+    CardPayment(),
+    BlikPayment(),
+    CashPayment()
+]
+
+for payment in payments:
+    payment.pay(100)
+```
+## Oczekiwany wynik
+```python
+Zapłacono kartą: 100 zł 
+Płatność BLIK: 100 zł (kod jednorazowy)
+Zapłacono gotówką: 100 zł (proszę wydać resztę)
+```
+
+```
 
 
 &nbsp;
