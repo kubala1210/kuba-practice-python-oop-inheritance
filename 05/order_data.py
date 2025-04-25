@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class Order(BaseModel):
     customer_name: str
     customer_type: str
@@ -14,10 +15,12 @@ class Customer:
     def get_price(self, base_price):
         return base_price
 
+
 class RegularCustomer(Customer):
 
     def get_price(self, base_price):
         return 0.9 * base_price
+
 
 class VipCustomer(Customer):
 

@@ -5,11 +5,13 @@ class User:
         self.name = name
         User.total_users += 1
 
+
 class Admin(User):
 
     def __init__(self, name):
         super().__init__(name)
         self.role = 'admin'
+
 
 class Guest(User):
 

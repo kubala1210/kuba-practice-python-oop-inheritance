@@ -1,10 +1,12 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, PositiveInt
+
 
 class Order(BaseModel):
     user_id: int
     product: str
-    quantity: int
+    quantity: PositiveInt
     price: float
+
 
 valid_data = {
     "user_id": 123,
@@ -16,10 +18,8 @@ valid_data = {
 data = {
     "user_id": "abc",
     "product": "monitor",
-    "quantity": 2,
+    "quantity": -2,
     "price": 899.99
 }
 
 order = Order(**data)
-
-

@@ -6,7 +6,6 @@ class Order:
         self.quantity = quantity
         self.price = price
 
-
     def user_id_check(self):
         if not isinstance(self.user_id, int):
             raise TypeError('User ID must be integer')
@@ -16,8 +15,7 @@ class Order:
     def quantity_check(self):
         if not self.quantity >= 1:
             raise ValueError('Quantity must be greater than 0')
-        else:
-            return True
+        return True
 
 
 valid_data = {
@@ -40,4 +38,3 @@ invalid_data = {
 
 order = Order(**invalid_data)
 order.user_id_check()
-
